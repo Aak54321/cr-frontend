@@ -1,0 +1,132 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Container Styles */
+.search-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #eeeeee;
+  position: relative;
+  overflow-x: hidden;
+  color: #ffffff;
+}
+
+.search-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 10px; /* Adjust padding for better mobile view */
+}
+
+/* Dropzone Styles */
+.dropzone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px; /* Default max-width for desktop */
+  height: 200px; /* Default height for desktop */
+  margin: 20px 0;
+  padding: 20px;
+  border: 2px solid #32E0C4;
+  border-radius: 10px;
+  background-color: #cdcaca;
+  color: #130B0B;
+  font-size: 45px;
+  font-family: "Bakbak One", sans-serif;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.dropzone::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #32E0C4;
+  border-radius: 10px;
+  box-sizing: border-box;
+  z-index: 1;
+  animation: shine 1.5s infinite;
+  opacity: 0.8;
+}
+@media (max-width: 480px) {
+  .dropzone {
+    max-width: 90%; /* Make dropbox width responsive on mobile */
+    height: 150px; /* Adjust height for mobile */
+    font-size: 35px; /* Adjust font size for mobile */
+  }
+}
+@keyframes shine {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(50, 224, 196, 0.8);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(50, 224, 196, 1);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(50, 224, 196, 0.8);
+  }
+}
+
+/* Preview Container Styles */
+.preview-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%; /* Responsive width */
+  max-width: 600px;
+  margin: 20px 0;
+}
+
+.preview-container img {
+  max-width: 70%; /* Ensure image scales well */
+  height: auto;
+}
+
+/* Button Styles */
+.search-button {
+  padding: 12px 25px; /* Adjust padding for mobile */
+  margin-top: 15px;
+  font-family: "K2D", sans-serif;
+  font-size: 18px; /* Adjust font size for mobile */
+  font-weight: 800;
+  background-color: #332B2B;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: #3AE4C9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #888;
+}
+
+/* Header and Footer Styles */
+.searching-header, .searching-footer {
+  padding: 10px 20px; /* Adjust padding for mobile */
+}
+
+.searching-footer {
+  height: 60px;
+}
+
+.searching-footer h1 {
+  font-size: 14px; /* Adjust font size for mobile */
+}

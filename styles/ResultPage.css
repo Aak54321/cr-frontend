@@ -1,0 +1,174 @@
+.result-page {
+  max-width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.result-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eeeeee;
+  flex: 1;
+  overflow: hidden;
+}
+
+.image-carousel-container {
+  display: flex;
+  flex-direction: row; /* Default to row layout for desktop */
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.image-box {
+  margin-right: 20px;
+  text-align: center;
+  width: 40%;
+}
+
+.image-box > img {
+  width: 50%; /* Full width of the image box */
+  border-radius: 8px;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.carousel {
+  width: 60%; /* Full width of the carousel box */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.carousel-content {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.carousel-image-box {
+  flex: 0 0 auto;
+  width: 400px; /* Fixed width for desktop */
+  text-align: center;
+  position: relative;
+}
+
+.carousel-image-box img {
+  width: 100%; /* Full width of the carousel image box */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.carousel-image-box p {
+  font-family: "K2D", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #474747;
+  margin-top: 10px;
+}
+
+.placeholder {
+  font-size: 18px;
+  color: #999;
+}
+
+.nav-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+
+.nav-button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.image-title,
+.carousel-title {
+  font-size: 36px;
+  color: #32e0c4;
+  font-family: "K2D", sans-serif;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Media Queries for Mobile Devices with max-width 480px */
+@media (max-width: 480px) {
+  .result-main {
+    flex-direction: column; /* Stack vertically on small screens */
+  }
+
+  .image-carousel-container {
+    flex-direction: column; /* Stack image and carousel vertically on small screens */
+  }
+
+  .image-box {
+    width: 90%; /* Full width with padding on small screens */
+    margin-bottom: 10px; /* Reduced margin */
+  }
+
+  .image-box > img {
+    width: 50%; /* Full width on small screens */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .carousel {
+    width: 90%; /* Full width on small screens */
+  }
+
+  .carousel-content {
+    flex-direction: column; /* Stack buttons and image vertically on small screens */
+    width: 100%;
+    align-items: center; /* Center the carousel content */
+  }
+
+  .carousel-image-box {
+    width: 100%; /* Full width on small screens */
+    position: relative; /* Ensure positioning works with flex */
+  }
+
+  .carousel-image-box img {
+    width: 90%; /* Full width on small screens */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .carousel-image-box p {
+    font-size: 14px; /* Smaller font size for small screens */
+  }
+
+  .nav-button {
+    font-size: 24px; /* Adjust font size for small screens */
+    width: 40px; /* Adjust width for small screens */
+    height: 40px; /* Adjust height for small screens */
+    position: absolute; /* Absolute positioning for buttons */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    z-index: 4;
+  }
+
+  .nav-button:first-of-type {
+    left: 10px; /* Left button position */
+  }
+
+  .nav-button:last-of-type {
+    right: 10px; /* Right button position */
+  }
+
+  .image-title,
+  .carousel-title {
+    font-size: 18px; /* Smaller font size for small screens */
+  }
+}
