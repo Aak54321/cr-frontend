@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+<div align=center>
+  <img src="https://media-hosting.imagekit.io//97787fca7ac24cda/5XA.png?Expires=1834548660&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=u5AothZchaTsjbTJfePDefGjRPX1feaKTBZ96ePdkLb2Lbc3TG27IViOwFT0tQtx29xIZNUZJSe88Y~KjSdWkPHRq3fABY4arZRarHNJaELUh3jhQYo2QXu3I3zv8gG5PfeF5Qp-GGbX8PqgWKqcUr8SGjIdkPymWaIhlo0M-bOtyHGyeuHlYNO6CUx8hzmXDFvdiNzLyUbpdrsfkodexFbrb6RLzmkcMxJqXtUJljuB8uVQ1VPcb8htSw~~cwg3N7D3EPpAjd9KiYlPdXdLthKWqsp0XL5QUnRO2D7xr1jPdFMQPOEXO8JbuhXA1DPzpLwDKDU8UqeDavmkcWc0WQ__" width="137" alt="Logo" />
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://media-hosting.imagekit.io//696d072a6b054e3d/swappy-20250219-102605.png?Expires=1834549008&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=eAI71jIbkQGpe4KoiraHwokpDPK~QpJrnwauWgrWrbSU6gk4-MqFtsEDf9HltzsitvZQN8D6RDVkuZmt06M~gMSUV0bT68MSc0cgTqxyvlrb-NvwgJtcCRWBMNZQXS7TOmCqocy9aNb0~1Dj0UvFH6PZMPZxPUstbD-x~15smPNbvXKhZVYsObcLfthECsV4LW3F5K6f~tvrglJZM64wHQ0OCkrW6tDh3X2uEUDsfgyAAP29mFNH8JtUlsbOEtSrzCxGjABv3bTPPqcSnwy72WyM-vIESHNXBEBsdtEMCdpT1O7Q8P2a4OrZSLtTahYyDOz6txNCfEscyfziX4L5Mw__" width="215" alt="Logo" />
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+Cold Recog's frontend is built using **React.js** to provide a simple and clean user interface for identifying deceased individuals and missing persons. The application interacts with a Flask backend powered by TensorFlow . 
 
-### `npm start`
+## Components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Landing Page**: User-friendly interface for quick searches.
+    
+- **Search Functionality**: Upload images for identification.
+    
+- **Result Page**: Displays matched identities.
+    
+- **Responsive UI**: Optimized for different screen sizes.
+    
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- **Frontend**: React.js
+    
+- **Styling**: CSS
+    
+- **API Communication**: Fetch/Axios
+    
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation & Setup
 
-### `npm run build`
+1. Clone the repository:
+    
+    ```
+    git clone https://github.com/Aak54321/cr-frontend.git
+    cd cr-frontend
+    ```
+    
+2. Install dependencies:
+    
+    ```
+    npm install
+    ```
+    
+3. Start the development server:
+    
+    ```
+    npm start 
+    ```
+    
+4. Open `http://localhost:3000` in your browser.
+    
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+📂 cr-frontend/             # Cold Recog Frontend Codebase
+├── 📂 public/              # Public assets
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── 📜 manifest.json
+│   ├── robots.txt
+├── 📂 src/                 # Main source code
+│   ├── 📂 assets/          # Images and fonts
+│   │   ├── detective.png
+│   │   ├── glitch_inside.otf
+│   │   ├── logo.png
+│   ├── 📂 pages/           # React components for pages
+│   │   ├── AnimationComponent.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Header.jsx
+│   │   ├── LandingPage.jsx
+│   │   ├── ResultPage.jsx
+│   │   ├── SearchPage.jsx
+│   ├── 📂 styles/          # CSS for pages
+│   │   ├── AnimationComponent.css
+│   │   ├── Footer.css
+│   │   ├── Header.css
+│   │   ├── LandingPage.css
+│   │   ├── ResultPage.css
+│   │   ├── SearchPage.css
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   ├── index.js
+├── 📜 .gitignore           # Ignored files configuration
+├── 📜 package.json         # Dependencies and scripts
+├── 📜 package-lock.json    # Dependency Lock file  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
 
-### `npm run eject`
+## Contributing
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Feel free to contribute by submitting issues or pull requests!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This project is licensed under the MIT License.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
