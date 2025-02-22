@@ -1,10 +1,10 @@
-import React, { useCallback, useState, useEffect } from "react";
-import { useDropzone } from "react-dropzone";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/SearchPage.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import AnimationComponent from "./AnimationComponent";
+import { FileUpload } from "./FileUpload";
 
 const SearchPage = () => {
   const navigate = useNavigate();
@@ -19,20 +19,18 @@ const SearchPage = () => {
       setIsMobile(window.innerWidth <= 767);
     };
 
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const onDrop = useCallback(async (acceptedFiles) => {
-    if (acceptedFiles.length > 0) {
+  const handleFileUpload = async (files) => {
+    if (files.length > 0) {
       setIsFileProcessing(true);
-      const file = acceptedFiles[0];
+      const file = files[0];
       const formData = new FormData();
       formData.append("file", file);
-      const ipAdd="localhost";
+      const ipAdd = "localhost";
+
       try {
         const response = await fetch(`http://${ipAdd}:5000/upload`, {
           method: "POST",
@@ -58,17 +56,9 @@ const SearchPage = () => {
       const preview = URL.createObjectURL(file);
       setPreviewUrl(preview);
 
-      // Cleanup URL on component unmount
-      return () => {
-        URL.revokeObjectURL(preview);
-      };
+      return () => URL.revokeObjectURL(preview);
     }
-  }, []);
-
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop,
-    accept: "image/jpeg, image/png, image/jpg",
-  });
+  };
 
   const handleSearch = () => {
     navigate("/result", {
@@ -80,12 +70,7 @@ const SearchPage = () => {
     if (previewUrl) {
       setIsFileProcessing(false);
     }
-
-    return () => {
-      if (previewUrl) {
-        URL.revokeObjectURL(previewUrl);
-      }
-    };
+    return () => previewUrl && URL.revokeObjectURL(previewUrl);
   }, [previewUrl]);
 
   return (
@@ -104,14 +89,7 @@ const SearchPage = () => {
             </button>
           </div>
         ) : (
-          <div {...getRootProps({ className: "dropzone" })}>
-            <input {...getInputProps()} />
-            {isDragActive ? (
-              <p>{isMobile ? "Upload or Capture" : "Drop the files here ..."}</p>
-            ) : (
-              <p>{isMobile ? "Upload or Capture" : "DRAG & DROP"}</p>
-            )}
-          </div>
+          <FileUpload onChange={handleFileUpload} />
         )}
       </main>
       <Footer />
