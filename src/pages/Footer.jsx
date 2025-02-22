@@ -1,21 +1,47 @@
 import React from "react";
-import "../styles/Footer.css"; // Import the Footer CSS
+import FloatingDock from "../components/FloatingDock";
+import {
+  IconBrandGithub,
+  IconExchange,
+  IconHome,
+  IconNewSection,
+} from "@tabler/icons-react";
 
 const Footer = () => {
+  const links = [
+    {
+      title: "Home",
+      icon: (
+        <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/",
+    },
+    {
+      title: "Search",
+      icon: (
+        <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/search",
+    },
+    {
+      title: "Issue",
+      icon: (
+        <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "https://github.com/Team-5XA/cold-recog/issues",
+    },
+    {
+      title: "GitHub",
+      icon: (
+        <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "https://github.com/Team-5XA",
+    },
+  ];
+
   return (
-    <footer className="footer">
-      <nav>
-        <a href="https://github.com/Hackathon-5XA/Cold-Recog-UI/issues">
-          <button>Issues</button>
-        </a>
-        <a href="https://github.com/Hackathon-5XA">
-          <button>Repo</button>
-        </a>
-        <a href="/">
-          <button>Privacy Policy</button>
-        </a>
-      </nav>
-      <h1>CopyRight &copy; 5XA</h1>
+    <footer className="w-full fixed bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center bg-white bg-opacity-0 z-50">
+      <FloatingDock items={links} />
     </footer>
   );
 };
